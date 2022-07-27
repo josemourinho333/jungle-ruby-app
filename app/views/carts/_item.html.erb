@@ -12,9 +12,13 @@
   </td>
   <td>
     <div>
+    <% if !order %>
     <%= button_to remove_item_cart_path(product_id: product.id), class: 'btn btn-xs btn-danger' do %> - <% end %>
+    <% end %>
     <%= quantity %>
+    <% if !order %>
     <%= button_to add_item_cart_path(product_id: product.id), class: 'btn btn-xs btn-success' do %> + <% end %>
+    <% end %>
     </div>
   </td>
   <td>
