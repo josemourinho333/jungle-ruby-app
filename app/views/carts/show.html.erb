@@ -4,6 +4,7 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if enhanced_cart.length > 0 %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -48,5 +49,10 @@
       <% end %>
     </div>
   </div>
+  <% else %>
+  <div class="alert alert-danger" role="alert">
+    No items in your cart. <a href="<%= root_path %>" class="alert-link">Browse and add items to your cart</a>.
+  </div>
+  <% end %>
 
 </section>
