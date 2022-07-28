@@ -20,6 +20,13 @@ Rails.application.routes.draw do
 
   resources :about, only: [:index]
 
+  get '/sessions', to: 'sessions#index'
+  post '/login', to: 'sessions#create'
+  post '/logout', to: 'sessions#destroy'
+
+  get '/users', to: 'users#new'
+  post '/users', to: 'users#create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
